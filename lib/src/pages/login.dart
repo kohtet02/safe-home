@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:safehome/src/services/auth.service.dart';
-import 'package:safehome/src/ui/washhand.dart';
+import 'package:safehome/src/pages/washhand.dart';
 import 'package:line_icons/line_icons.dart';
 
 AuthService appAuth = new AuthService();
@@ -51,34 +51,25 @@ class Login extends StatelessWidget {
       margin: EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
       child: ButtonTheme(
         height: 48,
-        child: RaisedButton(
+        child: RaisedButton.icon(
           materialTapTargetSize: MaterialTapTargetSize.padded,
           onPressed: () {
-            initiateSignIn(context, 'FB');
+            initiateSignIn(context, 'G');
           },
-          color: Color.fromRGBO(27, 76, 213, 1),
+          color: Colors.indigo[800],
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           textColor: Colors.white,
-          child: Row(
-            children: <Widget>[
-              Icon(
-                LineIcons.facebook,
-                size: 50,
-              ),
-              // Image(
-              //   image: AssetImage('assets/graphics/facebook.png'),
-              //   height: 40,
-              //   width: 40,
-              // ),
-              Text(
-                'Login with Facebook',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ],
+          icon: Icon(
+            LineIcons.facebook_official,
+            size: 50,
+          ),
+          label: Text(
+            'Login with Facebook',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
         ),
       ),
@@ -90,34 +81,25 @@ class Login extends StatelessWidget {
       margin: EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
       child: ButtonTheme(
         height: 48,
-        child: RaisedButton(
+        child: RaisedButton.icon(
           materialTapTargetSize: MaterialTapTargetSize.padded,
           onPressed: () {
             initiateSignIn(context, 'G');
           },
-          color: Color.fromRGBO(66, 133, 244, 1),
+          color: Colors.blue[600],
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           textColor: Colors.white,
-          child: Row(
-            children: <Widget>[
-              Icon(
-                LineIcons.google_plus,
-                size: 50,
-              ),
-              // Image(
-              //   image: AssetImage('assets/graphics/google.png'),
-              //   height: 40,
-              //   width: 40,
-              // ),
-              Text(
-                'Login with Google',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ],
+          icon: Icon(
+            LineIcons.google_plus,
+            size: 50,
+          ),
+          label: Text(
+            'Login with Google',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
         ),
       ),
@@ -129,29 +111,25 @@ class Login extends StatelessWidget {
       margin: EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
       child: ButtonTheme(
         height: 48,
-        child: RaisedButton(
+        child: RaisedButton.icon(
           materialTapTargetSize: MaterialTapTargetSize.padded,
           onPressed: () {
             initiateSignIn(context, 'T');
           },
-          color: Color.fromRGBO(29, 161, 242, 1),
+          color: Colors.lightBlue[400],
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
           textColor: Colors.white,
-          child: Row(
-            children: <Widget>[
-              Icon(
-                LineIcons.twitter_square,
-                size: 50,
-              ),
-              Text(
-                'Login with Twitter',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ],
+          icon: Icon(
+            LineIcons.twitter_square,
+            size: 50,
+          ),
+          label: Text(
+            'Login with Twitter',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
           ),
         ),
       ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:safehome/src/common/ui/common-button.dart';
+import 'package:safehome/src/common/buttons/normal.button.dart';
+import 'package:safehome/src/common/components/common.app.bar.dart';
+import 'package:safehome/src/common/components/common.bottom.nav.bar.dart';
+import 'package:safehome/src/common/styles/common.styles.dart';
 import 'package:safehome/src/services/auth.service.dart';
-import 'package:safehome/src/ui/login.dart';
-import '../common/ui/circle-button.dart';
-import '../styles/AppStyles.dart';
 
 AuthService appAuth = new AuthService();
 
@@ -13,13 +13,22 @@ class WashHand extends StatefulWidget {
 }
 
 class _State extends State<WashHand> {
-  static const double icon_size = 40;
-  static const double info_font_size = 24;
-  static const double padding_height = 10;
-  static const double label_font_size = 12;
-  static const double title_font_size = 36;
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CommonAppBar(
+        title: Text('Safe Home'),
+        appBar: AppBar(),
+      ),
+      body: SingleChildScrollView(
+        child: _washHandBody(),
+        scrollDirection: Axis.vertical,
+      ),
+      bottomNavigationBar: CommonBottomNavBar(),
+    );
+  }
+
+  Container _washHandBody() {
     return Container(
       color: Colors.white,
       child: Column(
@@ -83,7 +92,12 @@ class _State extends State<WashHand> {
                                   borderRadius: new BorderRadius.circular(12.0),
                                 ),
                                 child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    print('home pressed...');
+                                    appAuth.logout();
+                                    Navigator.popUntil(
+                                        context, ModalRoute.withName('/'));
+                                  },
                                   icon: Icon(Icons.home),
                                   color: Colors.white,
                                   iconSize: icon_size,
@@ -116,7 +130,9 @@ class _State extends State<WashHand> {
                                   borderRadius: new BorderRadius.circular(12.0),
                                 ),
                                 child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    print('work pressed...');
+                                  },
                                   icon: Icon(Icons.work),
                                   color: Colors.white,
                                   iconSize: icon_size,
@@ -147,7 +163,9 @@ class _State extends State<WashHand> {
                                   borderRadius: new BorderRadius.circular(12.0),
                                 ),
                                 child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    print('outside pressed...');
+                                  },
                                   icon: Icon(Icons.directions_run),
                                   color: Colors.white,
                                   iconSize: icon_size,
@@ -175,7 +193,7 @@ class _State extends State<WashHand> {
                           fontSize: info_font_size),
                       textAlign: TextAlign.left,
                     ),
-                    CommonButton(
+                    NormalButton(
                       text: 'Done !!',
                       btnColor: 0xFFFF6D00,
                       minWidth: 300,

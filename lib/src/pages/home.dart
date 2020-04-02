@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../common/ui/circle-button.dart';
-import '../styles/AppStyles.dart';
-import 'washhand.dart';
+import 'package:safehome/src/common/buttons/circle.button.dart';
+import 'package:safehome/src/common/styles/common.styles.dart';
+import 'package:safehome/src/pages/washhand.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -37,7 +37,7 @@ class _State extends State<Home> {
       //   padding: const EdgeInsets.all(16.0),
       //   child: WashHand(),
       // ),
-      body  :SingleChildScrollView(
+      body: SingleChildScrollView(
         child: WashHand(),
         scrollDirection: Axis.vertical,
       ),

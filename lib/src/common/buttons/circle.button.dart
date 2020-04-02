@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../styles/AppStyles.dart';
+import 'package:safehome/src/common/styles/common.styles.dart';
 
 class CircleButton extends StatelessWidget {
   final VoidCallback onPressed;

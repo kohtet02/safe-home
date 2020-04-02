@@ -6,27 +6,31 @@ const double btn_height = 50;
 const double txt_left_padding = 5.0;
 const double txt_right_padding = 14.0;
 
-//font size
+// font size
 const double common_font_size = 18.0;
+const double title_font_size = 36;
+const double info_font_size = 24;
+const double label_font_size = 12;
 
-//border
+// border
 const double btn_borderRadius = 10.0;
 
-//default button name
-const String default_btn_name = 'common button';
-
-//circle button radius
+// circle button radius
 const double circle_btn_radius = 30.0;
 const double circle_btn_size = 30.0;
 
-//icon
+// icon
 const double icon_width = 24.0;
 const double icon_height = 24.0;
+const double icon_size = 40;
 
-//bottom navigation
+// bottom navigation
 const double nav_btn_width = 93;
 const double nav_margin_vert = 10;
 const double nave_margin_hor = 12;
 
-//app bar 
+// app bar
 const double profile_icon_size = 50;
+
+// padding
+const double padding_height = 10;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:safehome/src/ui/washhand.dart';
-import 'src/ui/login.dart';
-import 'src/services/auth.service.dart';
+import 'package:safehome/src/pages/login.dart';
+import 'package:safehome/src/pages/washhand.dart';
+import 'package:safehome/src/services/auth.service.dart';
 
 AuthService appAuth = new AuthService();
 Widget _defaultHome = new Login();
@@ -9,10 +9,10 @@ Widget _defaultHome = new Login();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Get result of login function.
-  // final bool isLogged = await appAuth.isLoggedIn();
-  // if (isLogged) {
-  //   _defaultHome = new WashHand();
-  // }
+  final bool isLogged = await appAuth.isLoggedIn();
+  if (isLogged) {
+    _defaultHome = new WashHand();
+  }
 
   runApp(MyApp());
 }
