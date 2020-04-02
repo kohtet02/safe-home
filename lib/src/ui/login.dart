@@ -1,71 +1,189 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:safehome/src/common/ui/common-icon-button.dart';
-import 'package:safehome/src/common/ui/common-button.dart';
-import 'washhand.dart';
+import 'package:safehome/src/services/auth.service.dart';
+import 'package:safehome/src/ui/washhand.dart';
+import 'package:line_icons/line_icons.dart';
+
+AuthService appAuth = new AuthService();
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    const padding = 25.0;
-    const btn_padding = 15.0;
     return Container(
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          SizedBox(height: 100.0),
-          Image(
-            image: AssetImage("assets/graphics/logo.png"),
-            height: 50.0,
-            width: 200.0,
-          ),
-          SizedBox(height: 100.0),
-          CommonIconButton(
-              text: 'Login with Facebook',
-              btnColor: 0xFF4267B2,
-              icon: 'assets/graphics/facebook.png',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => WashHand()),
-                );
-              }),
-          SizedBox(height: btn_padding),
-          CommonIconButton(
-            onPressed: () {},
-            text: 'Login with Google',
-            btnColor: 0xFF4285F4,
-            icon: 'assets/graphics/google.png',
-            //icon: 'assets/graphics/facebook.png',
-          ),
-          SizedBox(height: btn_padding),
-          CommonIconButton(
-            text: 'Login with Twitter',
-            btnColor: 0xFF2189F3,
-            // icon: 'assets/graphics/twitter.png',
-            icon: 'assets/graphics/icons8-twitter-100.png',
-          ),
-          SizedBox(height: padding),
-          Container(
-            child: Text('or',
+      child: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            _buildLogo(),
+            _buildFacebookLoginButton(context),
+            _buildGoogleLoginButton(context),
+            _buildTwitterLoginButton(context),
+            _buildGuestLoginButton(context),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void initiateSignIn(BuildContext context, String type) {
+    appAuth.login(type).then((result) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => WashHand()),
+      );
+    });
+  }
+
+  Container _buildLogo() {
+    return Container(
+      margin: EdgeInsets.only(left: 0, top: 0, right: 0, bottom: 80),
+      child: Image(
+        image: AssetImage('assets/graphics/logo.png'),
+        height: 50.0,
+        width: 200.0,
+      ),
+    );
+  }
+
+  Container _buildFacebookLoginButton(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
+      child: ButtonTheme(
+        height: 48,
+        child: RaisedButton(
+          materialTapTargetSize: MaterialTapTargetSize.padded,
+          onPressed: () {
+            initiateSignIn(context, 'FB');
+          },
+          color: Color.fromRGBO(27, 76, 213, 1),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          textColor: Colors.white,
+          child: Row(
+            children: <Widget>[
+              Icon(
+                LineIcons.facebook,
+                size: 50,
+              ),
+              // Image(
+              //   image: AssetImage('assets/graphics/facebook.png'),
+              //   height: 40,
+              //   width: 40,
+              // ),
+              Text(
+                'Login with Facebook',
                 style: TextStyle(
-                  fontSize: 16.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black38,
-                )),
+                  fontSize: 20,
+                ),
+              ),
+            ],
           ),
-          SizedBox(height: padding),
-          CommonButton(
-            text: 'Login As Guest',
-            btnColor: 0xFFFF6D00,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => WashHand()),
-              );
-            },
-          )
-        ],
+        ),
+      ),
+    );
+  }
+
+  Container _buildGoogleLoginButton(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
+      child: ButtonTheme(
+        height: 48,
+        child: RaisedButton(
+          materialTapTargetSize: MaterialTapTargetSize.padded,
+          onPressed: () {
+            initiateSignIn(context, 'G');
+          },
+          color: Color.fromRGBO(66, 133, 244, 1),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          textColor: Colors.white,
+          child: Row(
+            children: <Widget>[
+              Icon(
+                LineIcons.google_plus,
+                size: 50,
+              ),
+              // Image(
+              //   image: AssetImage('assets/graphics/google.png'),
+              //   height: 40,
+              //   width: 40,
+              // ),
+              Text(
+                'Login with Google',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container _buildTwitterLoginButton(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
+      child: ButtonTheme(
+        height: 48,
+        child: RaisedButton(
+          materialTapTargetSize: MaterialTapTargetSize.padded,
+          onPressed: () {
+            initiateSignIn(context, 'T');
+          },
+          color: Color.fromRGBO(29, 161, 242, 1),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          textColor: Colors.white,
+          child: Row(
+            children: <Widget>[
+              Icon(
+                LineIcons.twitter_square,
+                size: 50,
+              ),
+              Text(
+                'Login with Twitter',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Container _buildGuestLoginButton(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
+      child: ButtonTheme(
+        height: 48,
+        child: RaisedButton(
+          materialTapTargetSize: MaterialTapTargetSize.padded,
+          onPressed: () {
+            // TODO: Create Guest User
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => WashHand()),
+            );
+          },
+          color: Colors.orangeAccent[700],
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          textColor: Colors.white,
+          child: Text(
+            'Login as Guest',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            ),
+          ),
+        ),
       ),
     );
   }

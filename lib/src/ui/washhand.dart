@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:safehome/src/services/auth.service.dart';
+import 'package:safehome/src/ui/login.dart';
 import '../common/ui/circle-button.dart';
 import '../styles/AppStyles.dart';
+
+AuthService appAuth = new AuthService();
 
 class WashHand extends StatefulWidget {
   @override
@@ -20,7 +24,12 @@ class _State extends State<WashHand> {
             Container(
                 width: nav_btn_width,
                 child: CircleButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print('Logging out...');
+                    appAuth.logout();
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login()));
+                  },
                   icon: Icons.pan_tool,
                   iconColor: Colors.white70,
                   btnColor: Color(0xFFFF6D00),
@@ -28,7 +37,9 @@ class _State extends State<WashHand> {
             Container(
                 width: nav_btn_width,
                 child: CircleButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print('Home pressed...');
+                  },
                   icon: Icons.home,
                   iconColor: Colors.white70,
                   btnColor: Color(0xFF4285F4),

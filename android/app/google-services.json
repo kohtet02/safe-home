@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "559739112278",
+    "firebase_url": "https://safehome-429ff.firebaseio.com",
+    "project_id": "safehome-429ff",
+    "storage_bucket": "safehome-429ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559739112278:android:b50602580844f2c150a4f7",
+        "android_client_info": {
+          "package_name": "com.example.safehome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559739112278-8gdvt3ngteg6ph95rmcpj7s51req4ebm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXmS_V_Iaye8PlmdJO4cF_8TQxAN_5feY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559739112278-8gdvt3ngteg6ph95rmcpj7s51req4ebm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

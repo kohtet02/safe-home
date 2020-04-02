@@ -28,6 +28,11 @@ dependencies:
   #convex_bottom_bar: ^2.1.1
   line_icons: ^0.2.0
 
+  # social login dependency
+  flutter_facebook_login: ^3.0.0
+  google_sign_in: ^4.0.1+1
+  firebase_auth: ^0.15.5+3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
