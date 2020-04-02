@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:safehome/src/common/ui/common-icon-button.dart';
 import 'package:safehome/src/common/ui/common-button.dart';
-import 'washhand.dart';
+import 'home.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -27,7 +27,7 @@ class Login extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => WashHand()),
+                  MaterialPageRoute(builder: (context) => Home()),
                 );
               }),
           SizedBox(height: btn_padding),
@@ -61,7 +61,7 @@ class Login extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => WashHand()),
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           )
