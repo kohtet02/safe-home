@@ -8,6 +8,7 @@ class CommonButton extends StatelessWidget {
   final double borderRadius;
   final int btnColor;
   final String icon;
+  final double minWidth;
 
   CommonButton({
     this.onPressed,
@@ -16,6 +17,7 @@ class CommonButton extends StatelessWidget {
     this.icon,
     this.textStyle,
     this.btnColor = 0xFF4267B2,
+    this.minWidth = btn_width,
     Key key,
   })  : assert(text != null),
         super(key: key);
@@ -24,7 +26,7 @@ class CommonButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
         child: ButtonTheme(
-      minWidth: btn_width,
+      minWidth: minWidth,
       height: btn_height,
       buttonColor: Color(btnColor),
       shape: RoundedRectangleBorder(

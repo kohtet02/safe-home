@@ -25,5 +25,8 @@ const double icon_height = 24.0;
 
 //bottom navigation
 const double nav_btn_width = 93;
-const double nav_margin_vert = 24;
+const double nav_margin_vert = 10;
 const double nave_margin_hor = 12;
+
+//app bar 
+const double profile_icon_size = 50;
