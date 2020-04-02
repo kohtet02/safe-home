@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:safehome/src/common/ui/common-button.dart';
+import 'package:safehome/src/services/auth.service.dart';
+import 'package:safehome/src/ui/login.dart';
+import '../common/ui/circle-button.dart';
+import '../styles/AppStyles.dart';
+
+AuthService appAuth = new AuthService();
 
 class WashHand extends StatefulWidget {
   @override
