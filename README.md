@@ -5,7 +5,7 @@ This app is created to get more awareness of people around you
  - your beloved ones:couple_with_heart: and
  - people around the world:earth_asia:
 
-Washing hands is the only way to keep the virus out and take action properly to take control of novel epidemic COVID 19.
+Washing hands is the only way to keep the virus out and take action properly to take control of novel pandemic COVID 19.
 
 ## About Me
 Before explaining about my project UI design, let me introduce myself and why I started this project.
@@ -106,7 +106,8 @@ Phase|ToDo|Description|Progress|Status
 phase1|UI Design|Create UI design|done|:white_check_mark:
 phase1|Flutter Client|Create Flutter Client based on UI design|on progress|:rocket:
 phase1|Social Login|Authenticate using firebase cloud with social media|on progress|:rocket:
-phase1|GraphQL Server|Create GraphQL Server using AWS AppSync||
+phase1|GraphQL Server|Create GraphQL Server using AWS AppSync|postponed|:zzz:
+phase1|Firebase Backend|Create Firebase database and connect with Client|on progress|:rocket:
 
 ## Contribution
 Welcome anyone who would like to help to complete this project or can make a better idea.<br>
