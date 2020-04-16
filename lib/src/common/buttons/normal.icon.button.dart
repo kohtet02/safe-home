@@ -56,7 +56,7 @@ class NormalIconButton extends StatelessWidget {
                   style: textStyle ??
                       TextStyle(
                         // default to the application font-style
-                        fontSize: common_font_size,
+                        fontSize: sm_font_size,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),

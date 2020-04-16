@@ -19,16 +19,21 @@ class CircleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: CircleAvatar(
-        radius: circle_btn_radius,
-        backgroundColor: btnColor,
+      child: Container(
+        width: 60,
+        height: 60,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: btnColor,
+        ),
         child: IconButton(
           icon: Icon(
             icon,
-            color: iconColor,
-            size: circle_btn_size,
           ),
           onPressed: () {},
+          color: iconColor,
+          iconSize: circle_btn_size,
+          alignment: Alignment.center,
         ),
       ),
     );

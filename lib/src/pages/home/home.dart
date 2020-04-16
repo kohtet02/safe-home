@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:safehome/src/common/buttons/circle.button.dart';
 import 'package:safehome/src/common/styles/common.styles.dart';
-import 'package:safehome/src/pages/washhand.dart';
+import 'package:safehome/src/pages/washhand/washhand.dart';
 
 class Home extends StatefulWidget {
   @override

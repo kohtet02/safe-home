@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:safehome/src/pages/login.dart';
-import 'package:safehome/src/pages/washhand.dart';
+import 'package:safehome/src/pages/login/login.dart';
+import 'package:safehome/src/pages/washhand/washhand.dart';
 import 'package:safehome/src/services/auth.service.dart';
 
 AuthService appAuth = new AuthService();

@@ -42,7 +42,7 @@ class NormalButton extends StatelessWidget {
               text,
               style: textStyle ??
                   TextStyle(
-                    fontSize: common_font_size,
+                    fontSize: sm_font_size,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
